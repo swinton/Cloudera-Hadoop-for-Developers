@@ -1,0 +1,28 @@
+
+Java programming to compute tf-idf over a corpus
+------------------------------------------------
+
+* To stage suitable data, use shakespeare-stream.tar.gz:
+
+	cp ../../data/shakespeare-stream.tar.gz .
+	tar zxvf shakespeare-stream.tar.gz
+	hadoop fs -put shakespeare-stream shakespeare-stream
+
+  or use shakespeare-stream-fragment.tar, for tiny input:
+
+	tar xvf shakespeare-stream-fragment.tar
+	mv shakespeare-stream-fragment shakespeare-stream
+	hadoop fs -put shakespeare-stream shakespeare-stream
+
+  Data can be used in HDFS or local filesystem (add "-fs file:///" to runs)
+
+* To compile and jar:
+
+	build
+
+* To execute: 
+
+	run
+  or
+	runjtlocal (for local job tracker)
+

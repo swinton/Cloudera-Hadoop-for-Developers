@@ -1,0 +1,4 @@
+rm *.jar *.class
+javac -classpath $HADOOP_HOME/hadoop*core.jar *.java
+jar cvf tfidf.jar -C . *.class
+rm *.class

@@ -1,0 +1,8 @@
+-- SUMMARY
+-- Data derived from the MovieLens data set, a project of 
+-- University of Minnesota (http://www.grouplens.org/node/73).
+-- 
+-- These tables contain 1,000,209 anonymous ratings of 
+-- approximately 3,900 movies made by 6,040 MovieLens users who joined 
+-- MovieLens in 2000.
+-- ------------------------------------------------------

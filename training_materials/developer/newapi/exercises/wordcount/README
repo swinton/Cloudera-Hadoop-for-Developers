@@ -1,0 +1,31 @@
+Simple classes to find word counts over a directory of text files using Hadoop.
+
+The source files are:
+
+  WordCount.java
+    - A simple driver class.
+  WordCountWTool.java
+     - A variant of the driver class that accepts enhanced "generic options".
+  WordMapper.java
+     - The mapper for both drivers.
+  SumReducer.java
+     - The reducer for both drivers.
+
+To compile these 4 Java classes (ignore deprecation notes):
+
+  $ javac -classpath $HADOOP_HOME/hadoop*core.jar *.java
+
+
+To create the jar file for running hadoop jobs:
+
+  $ jar cvf wc.jar -C . *.class
+
+
+To run the conventional WordCount driver against HDFS:
+
+  $ hadoop jar wc.jar WordCount <input dir>  <output dir>
+
+
+To run WordCountWTool with the local filesystem and local jobrunner:
+
+  $ hadoop jar wc.jar WordCountWTool -fs file:/// -jt local <input dir>  <output dir>

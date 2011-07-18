@@ -1,0 +1,12 @@
+
+Improvements to make
+--------------------
+
+- Custom writables
+- Sequence files
+- Custom comparators
+- Combiners
+- Possibly eliminate 1 or 2 passes
+- General code improvements
+- Solution in new API
+

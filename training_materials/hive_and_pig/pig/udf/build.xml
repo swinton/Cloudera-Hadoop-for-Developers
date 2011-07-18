@@ -1,0 +1,49 @@
+<!--
+
+  Buildfile for Pig UDFs
+  (c) Copyright 2009 Cloudera, Inc.
+
+  Type 'ant' on the command line in this directory
+  to create the textudf.jar library to load into Pig
+-->
+
+<project name="world" default="jar">
+  <property name="bindir"      value="${basedir}/bin" />
+  <property name="srcdir"      value="${basedir}/src" />
+  <property name="jarname"     value="${basedir}/textudf.jar" />
+  <property name="hadoop-home" value="/usr/lib/hadoop" />
+  <property name="hadoop-libs" value="${hadoop-home}/lib" />
+  <property name="pig-home"    value="/usr/lib/pig" />
+  <property name="pig-libs"    value="${pig-home}/lib" />
+
+  <target name="compile" description="Compile all Java sources">
+    <mkdir dir="${bindir}" />
+    <javac destdir="${bindir}">
+      <src path="${srcdir}" />
+      <classpath>
+        <fileset dir="${hadoop-libs}">
+          <include name="*.jar" />
+        </fileset>
+        <fileset dir="${hadoop-home}">
+          <include name="hadoop-*-core.jar" />
+        </fileset>
+        <fileset dir="${pig-libs}">
+          <include name="*.jar" />
+        </fileset>
+        <fileset dir="${pig-home}">
+          <include name="pig-*-core.jar" />
+        </fileset>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile" description="Package the classes into a .jar file">
+    <jar destfile="${jarname}" basedir="${bindir}" />
+  </target>
+
+  <target name="clean" description="Remove all compilation products to ensure a clean build">
+    <delete dir="${bindir}" />
+    <delete file="${jarname}" />
+  </target>
+
+</project>

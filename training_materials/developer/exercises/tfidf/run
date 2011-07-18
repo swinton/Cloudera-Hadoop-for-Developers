@@ -1,0 +1,11 @@
+hadoop fs -rmr result*
+hadoop jar tfidf.jar Job1 shakespeare-stream result1
+hadoop jar tfidf.jar Job2 result1 result2
+hadoop jar tfidf.jar Job3 shakespeare-stream result3
+hadoop jar tfidf.jar Job4 result3 result4
+hadoop jar tfidf.jar Job5 shakespeare-stream result5
+hadoop jar tfidf.jar Job6 result4 result5 result6
+hadoop jar tfidf.jar Job7 shakespeare-stream result7
+hadoop jar tfidf.jar Job8 result6 result7 result8
+hadoop jar tfidf.jar Job9 result2 result8 result-tfidf
+
